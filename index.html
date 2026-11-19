@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Raízes Profundas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <canvas id="game"></canvas>
+
+  <div id="hud" hidden>
+    <aside id="corner">
+      <canvas id="minimap" width="180" height="180"></canvas>
+      <div id="info">
+        <div id="biome"></div>
+        <div id="clock"></div>
+        <div class="sub"><span id="coords"></span><span id="armor"></span></div>
+      </div>
+    </aside>
+    <button id="menuBtn" title="Menu (Esc)">☰</button>
+    <div id="fps"></div>
+
+    <div id="boss"><div id="bossName"></div><div class="track"><i id="bossBar"></i></div></div>
+
+    <footer id="bottom">
+      <div id="itemName"></div>
+      <div id="vitals">
+        <div class="vital hp">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 14.2S1.4 9.8 1.4 5.5A3.5 3.5 0 0 1 8 3.7a3.5 3.5 0 0 1 6.6 1.8C14.6 9.8 8 14.2 8 14.2z"/></svg>
+          <div class="meter" id="hpMeter"><i></i><span></span></div>
+        </div>
+        <div class="vital food">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><ellipse cx="6.3" cy="6.3" rx="5" ry="4.1" transform="rotate(45 6.3 6.3)"/><path class="bone" d="M9.4 9.4l3.4 3.4"/><circle class="bone-end" cx="13.4" cy="13.4" r="1.7"/></svg>
+          <div class="meter" id="foodMeter"><i></i><span></span></div>
+        </div>
+      </div>
+      <div id="stamina"><i></i></div>
+      <div id="hotbar"></div>
+    </footer>
+  </div>
+
+  <div id="toasts"></div>
+  <div id="fade"></div>
+  <div id="tooltip"></div>
+
+  <div id="worldMap">
+    <div class="box">
+      <header><h2 id="mapTitle"></h2><button id="mapClose" title="Fechar">✕</button></header>
+      <canvas id="mapCanvas" width="512" height="512"></canvas>
+      <div class="legend">
+        <span><b class="me">➤</b> Você</span><span><b class="door">▼▲</b> Passagem</span>
+        <span><b class="boss">☠</b> Guardião</span><span><b class="village">⌂</b> Vila</span><span><b class="chest">■</b> Baú</span><span><b class="light">■</b> Luz</span>
+      </div>
+      <div id="mapHint" class="hint"></div>
+    </div>
+  </div>
+
+  <div id="panel">
+    <div class="box">
+      <section><h3>Inventário</h3><div id="inv"></div><p id="invHint" class="hint"></p></section>
+      <section id="craftCol"><h3>Criação</h3><div id="craftTabs"></div><div id="craft"></div>
+        <p class="hint">Shift + clique fabrica 5. Passe o mouse num ingrediente em vermelho para ver como obtê-lo.</p></section>
+      <section id="chestCol" hidden><h3>Baú</h3><div id="chestInv"></div><button id="chestTake">Recolher baú</button></section>
+    </div>
+  </div>
+
+  <div id="dialog"><div class="box" id="dialogBox"></div></div>
+  <div id="menu"><div class="box" id="menuBox"></div></div>
+
+  <div id="start">
+    <h1>Raízes Profundas</h1>
+    <p>Explore a superfície, sobreviva às noites e desça pela entrada da caverna. Lá embaixo, cinco guardiões ancestrais esperam nas profundezas.</p>
+    <div id="startBtns"></div>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
